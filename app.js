@@ -5,7 +5,7 @@ const app = express()
 
 app.use('/itens', rotaItem)
 
-const port = 8001
+const port = 3000
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
