@@ -1,16 +1,9 @@
 const { Router } = require('express')
+const { getItens } = require('../controllers/item')
 
 const router = Router()
 
-router.get('/', (req,res) => {
-    try{
-        res.send('Aqui serão exibidos os itens')
-    } catch (error) {
-        res.status(500)
-        res.send(error.message)
-    }
-
-})
+router.get('/', getItens)
 
 
 router.post('/', (req,res) => {
