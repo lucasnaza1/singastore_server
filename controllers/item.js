@@ -1,6 +1,9 @@
+const fs = require('fs')
+
 function getItens (req,res) {
     try{
-        res.send('Aqui serão exibidos os itens')
+        const itens = JSON.parse( fs.readFileSync('itens.json'))
+        res.send(itens)
     } catch (error) {
         res.status(500)
         res.send(error.message)
