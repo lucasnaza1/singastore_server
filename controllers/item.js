@@ -1,8 +1,8 @@
-const fs = require('fs')
+const { getTodosItens } = require('../services/itens')
 
-function getItens (req,res) {
-    try{
-        const itens = JSON.parse( fs.readFileSync('itens.json'))
+function getItens(req, res) {
+    try {
+        const itens = getTodosItens
         res.send(itens)
     } catch (error) {
         res.status(500)
@@ -11,5 +11,5 @@ function getItens (req,res) {
 }
 
 module.exports = {
-    getItens 
+    getItens
 }
