@@ -1,4 +1,4 @@
-const { getTodosItens, getItensId, insereItem } = require('../services/itens')
+const { getTodosItens, getItensId, insereItem, modificaItem } = require('../services/itens')
 
 function getItens(req, res) {
     try {
@@ -33,8 +33,22 @@ function postItem(req, res) {
     }
 }
 
+function patchItem(req, res) {
+    try {
+        const id = req.params.id
+        const body = req.body
+
+        modificaItem(body, id)
+        res.send('Item modificado com sucesso')
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+}
+
 module.exports = {
     getItens,
     getItem,
-    postItem
+    postItem,
+    patchItem
 }
