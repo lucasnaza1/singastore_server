@@ -29,9 +29,17 @@ function modificaItem(modificacoes, id) {
     fs.writeFileSync('item.json', JSON.stringify(itensAtuais))
 }
 
+function deletarItemPorId(id) {
+    const itens = JSON.parse(fs.readFileSync('itens.json'))
+
+    const itemFiltrado = itens.filter(item => item.id !== id)
+    fs.writeFileSync('itens.json', JSON.stringify(itemFiltrado))
+}
+
 module.exports = {
     getTodosItens,
     getItensId,
     insereItem,
-    modificaItem
+    modificaItem,
+    deletarItemPorId
 }

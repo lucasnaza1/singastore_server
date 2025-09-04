@@ -1,4 +1,4 @@
-const { getTodosItens, getItensId, insereItem, modificaItem } = require('../services/itens')
+const { getTodosItens, getItensId, insereItem, modificaItem, deletarItemPorId } = require('../services/itens')
 
 function getItens(req, res) {
     try {
@@ -46,9 +46,22 @@ function patchItem(req, res) {
     }
 }
 
+function deleteItem(req, res) {
+    try {
+        const id = req.params.id
+        deletarItemPorId(id)
+        res.send('Item deletado com sucesso')
+        res.send(200)
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+}
+
 module.exports = {
     getItens,
     getItem,
     postItem,
-    patchItem
+    patchItem,
+    deleteItem
 }
