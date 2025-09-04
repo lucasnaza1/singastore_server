@@ -11,7 +11,15 @@ function getItensId(id) {
     return itemFiltrado
 }
 
+function insereItem(itemNovo) {
+    const itens = JSON.parse(fs.readFileSync('itens.json'))
+    const novaListaItens = [...itens, itemNovo]
+
+    fs.writeFileSync('itens.json', JSON.stringify(novaListaItens))
+}
+
 module.exports = {
     getTodosItens,
-    getItensId
+    getItensId,
+    insereItem
 }

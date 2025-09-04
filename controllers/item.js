@@ -1,4 +1,4 @@
-const { getTodosItens, getItensId } = require('../services/itens')
+const { getTodosItens, getItensId, insereItem } = require('../services/itens')
 
 function getItens(req, res) {
     try {
@@ -21,8 +21,20 @@ function getItem(req, res) {
     }
 }
 
+function postItem(req, res) {
+    try {
+        const itemNovo = req.body
+        insereItem(itemNovo)
+        res.send('Item novo cadastrado')
+        res.send(201)
+    } catch (error) {
+        res.send(500)
+        res.send(error.message)
+    }
+}
 
 module.exports = {
     getItens,
-    getItem
+    getItem,
+    postItem
 }
