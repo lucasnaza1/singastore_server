@@ -13,8 +13,14 @@ function getItens(req, res) {
 function getItem(req, res) {
     try {
         const id = req.params.id
-        const item = getItensId(id)
-        res.send(item)
+        if (id && Number(id)) {
+            const item = getItensId(id)
+            res.send(item)
+        } else {
+            res.status(422)
+            res.send('ID invalido')
+        }
+
     } catch (error) {
         res.status(500)
         res.send(error.message)
@@ -37,9 +43,14 @@ function patchItem(req, res) {
     try {
         const id = req.params.id
         const body = req.body
+        if (id && Number(id)) {
+            modificaItem(body, id)
+            res.send('Item modificado com sucesso')
+        } else {
+            res.status(422)
+            res.send('ID invalido')
+        }
 
-        modificaItem(body, id)
-        res.send('Item modificado com sucesso')
     } catch (error) {
         res.status(500)
         res.send(error.message)
@@ -49,9 +60,16 @@ function patchItem(req, res) {
 function deleteItem(req, res) {
     try {
         const id = req.params.id
-        deletarItemPorId(id)
-        res.send('Item deletado com sucesso')
-        res.send(200)
+
+        if (id && Number(id)) {
+            deletarItemPorId(id)
+            res.send('Item deletado com sucesso')
+            res.send(200)
+        } else {
+            res.status(422)
+            res; send('ID invalido')
+        }
+
     } catch (error) {
         res.status(500)
         res.send(error.message)
