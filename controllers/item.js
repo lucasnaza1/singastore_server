@@ -29,10 +29,16 @@ function getItem(req, res) {
 
 function postItem(req, res) {
     try {
+        if (req.body.name) {
+            insereItem(itemNovo)
+            res.send('Item novo cadastrado')
+            res.send(201)
+        } else {
+            res.status(422)
+            res.send('O campo nome é obrigatório')
+        }
         const itemNovo = req.body
-        insereItem(itemNovo)
-        res.send('Item novo cadastrado')
-        res.send(201)
+
     } catch (error) {
         res.send(500)
         res.send(error.message)
