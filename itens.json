@@ -1,1 +1,50 @@
-[{"id":"1","nome":"Tormento de Liandry"},{"id":"2","nome":"Cetro de Rylai"},{"id":"3","nome":"Criafendas"},{"id":"4","nome":"Capuz de Rabadon"}]
+[
+    {
+        "id": "1",
+        "nome": "Tormento de Liandry"
+    },
+    {
+        "id": "2",
+        "nome": "Cetro de Rylai"
+    },
+    {
+        "id": "3",
+        "nome": "Criafendas"
+    },
+    {
+        "id": "4",
+        "nome": "Capuz de Rabadon"
+    },
+    {
+        "id": "5",
+        "nome": "Eco de Luden"
+    },
+    {
+        "id": "6",
+        "nome": "Perdição de Lich"
+    },
+    {
+        "id": "7",
+        "nome": "Morellonomicon"
+    },
+    {
+        "id": "8",
+        "nome": "Ampulheta de Zhonya"
+    },
+    {
+        "id": "9",
+        "nome": "Cajado do Vazio"
+    },
+    {
+        "id": "10",
+        "nome": "Dente de Nashor"
+    },
+    {
+        "id": "11",
+        "nome": "Manopla dos Glacinatas"
+    },
+    {
+        "id": "12",
+        "nome": "Força da Trindade"
+    }
+]
