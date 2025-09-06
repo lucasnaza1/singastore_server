@@ -1,5 +1,4 @@
 const fs = require('fs')
-const { deletarItemPorId } = require('./itens')
 
 function getTodosFavoritos() {
     return JSON.parse(fs.readFileSync('favoritos.json'))
@@ -25,6 +24,6 @@ function insereFavorito(id) {
 
 module.exports = {
     getTodosFavoritos,
-    deletarItemPorId,
+    deletarFavoritoId,
     insereFavorito
 }
