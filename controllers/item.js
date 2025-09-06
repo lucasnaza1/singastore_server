@@ -1,4 +1,4 @@
-const { getTodosItens, getItensId, insereItem, modificaItem, deletarItemPorId } = require('../services/itens')
+const { getTodosItens, getItensId, insereItem, modificaItem, deletarItemPorId } = require('../services/item')
 
 function getItens(req, res) {
     try {
