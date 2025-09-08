@@ -2,8 +2,8 @@ const { getTodosFavoritos, deletarFavoritoId, insereFavorito } = require("../ser
 
 function getFavoritos(req, res) {
     try {
-        const favoritos = getTodosFavoritos()
-        res.send(favoritos)
+        const itens = getTodosFavoritos()
+        res.send(itens)
     } catch (error) {
         res.status(500)
         res.send(error.message)
@@ -25,20 +25,16 @@ function postFavoritos(req, res) {
 function deleteFavorito(req, res) {
     try {
         const id = req.params.id
-
         if (id && Number(id)) {
             deletarFavoritoId(id)
-            res.send('Favorito foi deletado com sucesso')
-            res.send(200)
+            res.send(200).send('Favorito foi deletado com sucesso')
         } else {
-            res.status(422)
-            res.send('ID inválido')
+            res.status(422).send('ID inválido')
         }
 
 
     } catch (error) {
-        res.status(500)
-        res.send(error.message)
+        res.status(500).send(error.message)
     }
 }
 

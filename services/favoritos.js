@@ -4,7 +4,7 @@ function getTodosFavoritos() {
     return JSON.parse(fs.readFileSync('favoritos.json'))
 };
 
-function deletarFavoritoId() {
+function deletarFavoritoId(id) {
     const itens = JSON.parse(fs.readFileSync('favoritos.json'))
     const itensFiltrados = itens.filter(item => item.id !== id)
     fs.writeFileSync('favoritos.json', JSON.stringify(itensFiltrados))
